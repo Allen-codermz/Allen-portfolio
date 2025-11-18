@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Projecto 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primaria: #1a99c7;
+            --secundaria: #08ffef;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--escuro);
+            color: var(--claro);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .projecto3 {
+            padding: 6rem 3rem;
+        }
+
+        .projecto3-titulo {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .projecto3-caixa {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            border: 1px solid var(--vidro);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .projecto3-paragrafo {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+
+        video {
+            width: 100%;
+            max-width: 550px;
+            height: 350px;
+            border-radius: 12px;
+        }
+
+        .video-caixa {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--vidro);
+            padding: 0.4rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            margin-top: 2rem;
+            box-shadow: #1a99c7 0px 0px 8px;
+        }
+
+        .video-projecto3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .particulas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            background: radial-gradient(circle at 10% 20%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                radial-gradient(circle at 90% 80%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                var(--maisEscuro);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <section class="projecto3">
+        <h4 class="projecto3-titulo">Simulação de uma loja de informática</h4>
+        <div class="projecto3-caixa">
+            <p class="projecto3-paragrafo">Neste projecto apresento uma simulação de atendimento e assistência técnica
+                em uma loja de informática, onde desempenhei o papel de gerente, recebendo e ajudando clientes na
+                reparação de computadores. <br> No video é possivel avaliar as minhas competências em comunicação, organização e
+                resolução de problemas, assim como a aplicação da prática de conhecimentos técnicos no contexto real.</p>
+        </div>
+    </section>
+
+    <section class="video">
+        <div class="video-projecto3">
+            <div class="video-caixa">
+                <video src="./assets/videos/video1-projecto3.1.mp4"  controls poster="./assets/imagens/thumb.png"></video>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

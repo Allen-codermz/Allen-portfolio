@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Portfólio Allen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primaria: #1a99c7;
+            --secundaria: #08ffef;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+
+        body {
+            background-color: var(--escuro);
+            color: var(--claro);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            color: var(--primaria), var(--secundaria);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--claro);
+        }
+
+        .navegacao {
+            position: fixed;
+            background: rgba(15, 23, 42, 0.37);
+            width: 100%;
+            padding: 1rem;
+            z-index: 10;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .menu-resp {
+            display: none;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: var(--claro);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .menu-link::after {
+            content: "";
+            height: 2px;
+            width: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+            transition: width 0.5s ease;
+        }
+
+        .menu-link:hover::after {
+            width: 100%;
+        }
+
+        .foto-perfil {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--primaria);
+            border: 4px solid var(--primaria);
+            transition: all 0.5s ease;
+        }
+
+        .foto-perfil:hover {
+            box-shadow: 0 10px 20px var(--primaria);
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--primaria);
+            font-weight: bold;
+            margin-bottom: 20px;
+            background:
+                linear-gradient(to right, var(--escuro) 0%,
+                    var(--primaria) 10%, var(--escuro));
+            background-clip: text;
+            color: transparent;
+            animation: shift 4s linear infinite;
+        }
+
+        @keyframes shift {
+            0% {
+                background-position: -150px;
+            }
+
+            100% {
+                background-position: 300px;
+            }
+        }
+
+        .cabecalho {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .parallax-hero {
+            background: url(./assets/imagens/parallax1.1.png) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .parallax-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--vidro);
+            z-index: 1;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cabecalho-sub-titulo {
+            font-size: 1.5rem;
+            color: var(--claro);
+        }
+
+        .sobre {
+            padding: 6rem 3rem;
+        }
+
+        .sobre-titulo {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sobre-caixa {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            border: 1px solid var(--vidro);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .sobre-paragrafo {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .projectos {
+            padding: 6rem 3rem;
+        }
+
+        .projectos-caixa {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projectos-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--vidro);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .projectos-titulo {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .projectos-card:hover {
+            box-shadow: 0 10px 20px var(--secundaria);
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .projectos-imagem {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .info-projectos {
+            margin-bottom: 5px;
+        }
+
+        .caixa-textos-projectos {
+            padding: 1.25rem;
+        }
+
+        .paragrafos-projectos {
+            color: rgba(226, 232, 240, 0.8);
+            line-height: 1.15rem;
+        }
+
+        .habilidades {
+            padding: 6rem 3rem;
+        }
+
+        .habilidades-caixa {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 45px auto;
+        }
+
+        .habilidades-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--vidro);
+            padding: 1.25rem;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .habilidades-card:hover {
+            box-shadow: 0 10px 20px var(--secundaria);
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .habilidades-titulo {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .habilidades-info {
+            font-size: 1.5rem;
+            margin-bottom: 0px;
+        }
+
+        .habilidades-paragrafo {
+            text-align: left;
+            font-size: 1.1rem;
+            margin-top: 1px;
+        }
+
+        .Contatos {
+            padding: 6rem 3rem;
+        }
+
+        .icon-menu {
+            position: relative;
+            display: flex;
+            gap: 25px;
+            align-content: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .icon-menu .icon-link {
+            position: relative;
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: 0.5s;
+            overflow: hidden;
+            padding-left: 62px;
+            padding-right: 62px;
+        }
+
+        .icon-menu .icon-link:hover {
+            width: 180px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .icon-menu .icon-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 60px;
+            background: linear-gradient(45deg, var(--i), var(--j));
+            opacity: 0;
+            transition: 0.5s;
+            z-index: 0;
+        }
+
+        .icon-menu .icon-link:hover::before {
+            opacity: 1;
+        }
+
+        .icon-menu .icon-link .icon {
+            position: relative;
+            color: #fff;
+            font-size: 1.5em;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .icon-menu .icon-link:hover .icon {
+            transform: rotate(360deg);
+        }
+
+        .icon-menu .icon-link .titulo {
+            position: relative;
+            color: #fff;
+            font-weight: 600;
+            margin-left: 15px;
+            white-space: nowrap;
+            opacity: 1;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .icon-menu .icon-link:hover .titulo {
+            opacity: 1;
+        }
+
+        .particulas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            background: radial-gradient(circle at 10% 20%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                radial-gradient(circle at 90% 80%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                var(--maisEscuro);
+        }
+
+        .animeted-txt {
+            font-family: monospace;
+            margin-left: 25px;
+            font-size: 1.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 1px solid var(--claro);
+            animation: typing 3s steps(22) forwards, blink 0.75s step-end infinite;
+        }
+
+        .animeted-txt span {
+            position: relative;
+        }
+
+        .animeted-txt::before {
+            content: "";
+            color: var(--claro); 
+            
+            animation: animeted 15s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 18ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes animeted {
+
+            0%,
+            100% {
+                content: "Frontend Developer";
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+
+            header {
+                .navegacao .menu {
+                    display: none;
+                }
+
+                .menu-resp {
+                    display: block;
+                }
+            }
+
+            .icon-menu {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .foto-perfil {
+                width: 250px;
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .animeted-txt{
+                margin-right: 15px;
+            }
+
+            .cabecalho-sub-titulo {
+                font-size: 1rem;
+            }
+
+            .sobre-caixa,
+            .projectos-caixa,
+            .habilidades-caixa {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dropdown-item {
+            color: var(--primaria);
+            background-color: var(--escuro);
+            opacity: 0.9;
+        }
+
+        .dropdown-menu {
+            background-color: var(--escuro);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <header>
+        <nav class="navegacao">
+            <ul class="menu">
+                <li>
+                    <a href="#inicio" class="menu-link">Inicio</a>
+                </li>
+                <li>
+                    <a href="#sobre" class="menu-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#projectos" class="menu-link">Projectos</a>
+                </li>
+                <li>
+                    <a href="#habilidades" class="menu-link">Habilidades</a>
+                </li>
+                <li>
+                    <a href="./contatos.html" class="menu-link">Contatos</a>
+                </li>
+            </ul>
+            <div class="dropdown menu-resp">
+                <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="7" x2="19" y2="7" stroke="var(--primaria)" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="var(--primaria)" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="5" y1="17" x2="19" y2="17" stroke="var(--primaria)" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#inicio">Inicio</a></li>
+                    <li><a class="dropdown-item" href="#sobre">Sobre</a></li>
+                    <li><a class="dropdown-item" href="#projectos">Projectos</a></li>
+                    <li><a class="dropdown-item" href="#habilidades">Habilidades</a></li>
+                    <li><a class="dropdown-item" href="./contatos.html">Contatos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="inicio" class="cabecalho parallax-hero">
+        <div class="parallax-content">
+            <img src="./assets/imagens/perfil.png" alt="foto de Allen" class="foto-perfil" />
+            <h1>Allen Dinis</h1>
+            <div class="animeted-txt">
+                <span></span>
+            </div>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo"><strong>Sobre Mim</strong></h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Sou um desenvolvedor front-end pronto para transformar ideias em experiências digitais modernas,
+                responsivas e interativas. Aprender e evoluir a cada projeto é o que me move.
+            </p>
+        </div>
+    </section>
+
+    <section id="projectos" class="projectos">
+        <h2 class="projectos-titulo"><strong> Meus Projectos</strong></h2>
+        <div class="projectos-caixa">
+            <div class="projectos-card">
+                <a href="./projecto1.html">
+                    <img src="./assets/imagens/projecto1.png" alt="Project 1" class="projectos-imagem" />
+                    <div class="caixa-textos-projectos">
+                        <h3 class="info-projectos">Projecto 1</h3>
+                        <p class="info-projectos">
+                            Gestão de uma infraestrutura de redes de computadores.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="projectos-card">
+                <a href="./Projecto2.html">
+                    <img src="./assets/imagens/projecto2.2.jpg" alt="Project 2" class="projectos-imagem" />
+                    <div class="caixa-textos-projectos">
+                        <h3 class="info-projectos">Projecto 2</h3>
+                        <p class="info-projectos">
+                            Manutenção de computadores e Hardware.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="projectos-card">
+                <a href="./projecto3.html">
+                    <img src="./assets/imagens/thumb.png" alt="Project 3" class="projectos-imagem" />
+                    <div class="caixa-textos-projectos">
+                        <h3 class="info-projectos">Projecto 3</h3>
+                        <p class="info-projectos">
+                            Simulação de uma loja de informática
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="habilidades" class="habilidades">
+        <h2 class="habilidades-titulo"><strong>Habilidades</strong></h2>
+        <div class="habilidades-caixa">
+            <div class="habilidades-card">
+                <h3 class="habilidades-info"><strong>Linguagem de Programação</strong></h3>
+                <p class="habilidades-paragrafo">
+                    <i class="fa fa-html5"></i> Html5;<br>
+                    <i class="fa fa-css3"></i> CSS3;<br>
+                    <i class="devicon-javascript-plain"></i> JavaScript.
+                </p>
+            </div>
+
+            <div class="habilidades-card">
+                <h3 class="habilidades-info"><strong>Frameworks e <br> Bibliotecas</strong></h3>
+                <p class="habilidades-paragrafo">
+                    <i class="devicon-bootstrap-plain"></i> Bootstrap5; <br>
+                    <i class="devicon-tailwindcss-original"></i>TailwindCSS.
+                </p>
+            </div>
+
+            <div class="habilidades-card">
+                <h3 class="habilidades-info"><strong>Skills Profissionais</strong></h3>
+                <p class="habilidades-paragrafo">Comunicação eficaz;<br> Trabalho em equipe;<br> Atenção aos
+                    detalhes;<br> Liderança.
+                </p>
+            </div>
+
+            <div class="habilidades-card">
+                <h3 class="habilidades-info"><strong>Skills Técnicas</h3></strong>
+                <p class="habilidades-paragrafo">
+                    Aprendizagem continua; <br> Resolução de problemas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="icon-menu" class="icon-menu">
+            <ul class="icon-menu">
+
+                <a href="https://github.com/Allen-codermz">
+                    <li style="--i: #313130; --j: #0a0a0a" class="icon-link">
+                        <span class="icon"><i class="fa fa-github"></i></span>
+                        <span class="titulo">GitHub</span>
+                    </li>
+                </a>
+                <a
+                    href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BxQ9YaYjQTemK9RSzGep5CQ%3D%3D">
+                    <li style="--i: #0077b5; --j: #004182" class="icon-link">
+                        <span class="icon"><i class="fa fa-linkedin"></i></span>
+                        <span class="titulo">LinkedIn</span>
+                    </li>
+                </a>
+                <a
+                    href="mailto:allenuilissene1612@gmail.com?subject=Contato%20do%20Portfólio&body=Ol%C3%A1%20Allen,%20encontrei-te%20atrav%C3%A9s%20do%20teu%20portf%C3%B3lio!">
+                    <li style="--i: #6b77eb; --j: #e5e7eb" class="icon-link">
+                        <span class="icon"><i class="fa fa-envelope"></i></span>
+                        <span class="titulo">Email</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

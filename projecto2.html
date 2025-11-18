@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Projecto 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primaria: #1a99c7;
+            --secundaria: #08ffef;
+            --escuro: #0f172a;
+            --maisEscuro: #0a0f1c;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--escuro);
+            color: var(--claro);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .projecto2 {
+            padding: 6rem 3rem;
+        }
+
+        .projecto2-titulo {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .projecto2-caixa {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            border: 1px solid var(--vidro);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .Projecto2-paragrafo {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .car{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carossel {
+            max-width: 90%;
+            border-radius: 16px;
+            border: 1px solid var(--vidro);
+            background: rgba(255, 255, 255, 0.03);
+            width: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+
+        .slides img {
+            width: 25%;
+            transition: transform 0.5s;
+            border-radius: 15px;
+        }
+
+
+        .slides {
+            display: flex;
+            width: 400%;
+            animation: slide 15s infinite;
+        }
+
+        .slides-img {
+            width: 50%;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-25%);
+            }
+
+            50% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(-75%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+
+        }
+
+        @media (max-width:480px){
+            .projecto2-titulo{font-size: 1.5rem;
+
+            }
+        }
+
+
+        .particulas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            background: radial-gradient(circle at 10% 20%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                radial-gradient(circle at 90% 80%,
+                    var(--primaria) 0%,
+                    transparent 30%),
+                var(--maisEscuro);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <section class="projecto2">
+        <h4 class="projecto2-titulo">Manutenção de Computadores e Hardware</h4>
+        <div class="projecto2-caixa">
+            <p class="projecto2-paragrafo">Este projecto teve a participação de outros colegas e o objectivo foi veficar e
+                solucinar possiveis avarias de computador. <br> Tivemos como material de trabalho alguns computadores
+                switches e routers.</p>
+        </div>
+
+         <section>
+        <h4 class="projecto2-titulo">Imangens Ilustrativas do Projecto</h4>
+        <div class="car">
+        <div class="carossel">
+            <div class="slides">
+                <img src="./assets/imagens/projecto2.jpg" alt="imagem1" class="slides-img">
+                <img src="./assets/imagens/projecto2.1.jpg" alt="imagem1" class="slides-img">
+                <img src="./assets/imagens/projecto2.2.jpg" alt="imagem1" class="slides-img">
+                <img src="./assets/imagens/projecto2.3.jpg" alt="imagem1" class="slides-img">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    </section>
+</body>
+
+</html>
