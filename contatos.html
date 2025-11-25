@@ -108,27 +108,10 @@
             margin-top: 50px;
         }
 
-        .slogan{
+        .slogan {
             text-align: center;
             margin-bottom: 100px;
 
-        }
-
-        .particulas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.5;
-            background: radial-gradient(circle at 10% 20%,
-                    var(--primaria) 0%,
-                    transparent 30%),
-                radial-gradient(circle at 90% 80%,
-                    var(--primaria) 0%,
-                    transparent 30%),
-                var(--maisEscuro);
         }
 
         section.formulario {
@@ -170,7 +153,8 @@
         form .enviar input {
             width: 100%;
             max-width: 300px;
-            background: linear-gradient(90deg, var(--secundaria), var(--primaria));
+            background: linear-gradient(90deg,
+             var(--secundaria), var(--primaria));
             cursor: pointer;
             color: var(--maisEscuro);
             font-weight: 700;
@@ -257,17 +241,17 @@
         }
 
         .interface {
-    width: 100%;
-    max-width: 900px; /* evita ficar gigante em telas grandes */
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* empilha título + form */
-    gap: 40px; /* espaço entre o título e o formulário */
-}        
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
 
         @media (max-width: 480px) {
-            section.formulario{
+            section.formulario {
                 padding: 40px 15px;
             }
 
@@ -276,13 +260,13 @@
                 text-align: center;
             }
 
-          .interface{
-            padding: 10px;
-          }
+            .interface {
+                padding: 10px;
+            }
 
-          .menu{
-            display: none;
-          }
+            .menu {
+                display: none;
+            }
 
             .navegacao .menu {
                 display: none;

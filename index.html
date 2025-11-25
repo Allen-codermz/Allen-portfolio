@@ -295,9 +295,69 @@
             margin-top: 1px;
         }
 
-        .Contatos {
-            padding: 6rem 3rem;
+        .contactos-titulo {
+            font-size: 3rem;
+            text-align: center;
         }
+
+        .slogan {
+            text-align: center;
+            margin-bottom: 100px;
+
+        }
+
+        section.contactos {
+            padding: 60px 20px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            background-color: var(--vidro);
+            border: 0;
+            outline: 0;
+            padding: 1rem 0.5rem;
+            border-radius: 15px;
+            color: var(--claro);
+            font-size: 18px;
+        }
+
+        form textarea {
+            resize: none;
+            max-height: 200px;
+        }
+
+        form .enviar {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form .enviar input {
+            width: 100%;
+            max-width: 300px;
+            background: linear-gradient(90deg,
+                    var(--secundaria), var(--primaria));
+            cursor: pointer;
+            color: var(--maisEscuro);
+            font-weight: 700;
+            transition: 0.5s;
+        }
+
+        form .enviar input:hover {
+            box-shadow: 0px 0px 8px var(--secundaria);
+            transform: scale(1.05);
+        }
+
 
         .icon-menu {
             position: relative;
@@ -406,8 +466,8 @@
 
         .animeted-txt::before {
             content: "";
-            color: var(--claro); 
-            
+            color: var(--claro);
+
             animation: animeted 15s infinite;
         }
 
@@ -468,7 +528,7 @@
                 font-size: 3rem;
             }
 
-            .animeted-txt{
+            .animeted-txt {
                 margin-right: 15px;
             }
 
@@ -480,6 +540,19 @@
             .projectos-caixa,
             .habilidades-caixa {
                 grid-template-columns: 1fr;
+            }
+
+            section.contactos {
+                padding: 40px 15px;
+            }
+
+            .contactos-titulo {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .interface {
+                padding: 10px;
             }
         }
 
@@ -513,7 +586,7 @@
                     <a href="#habilidades" class="menu-link">Habilidades</a>
                 </li>
                 <li>
-                    <a href="./contatos.html" class="menu-link">Contatos</a>
+                    <a href="#contactos" class="menu-link">Contactos</a>
                 </li>
             </ul>
             <div class="dropdown menu-resp">
@@ -532,7 +605,7 @@
                     <li><a class="dropdown-item" href="#sobre">Sobre</a></li>
                     <li><a class="dropdown-item" href="#projectos">Projectos</a></li>
                     <li><a class="dropdown-item" href="#habilidades">Habilidades</a></li>
-                    <li><a class="dropdown-item" href="./contatos.html">Contatos</a></li>
+                    <li><a class="dropdown-item" href="#contactos">Contactos</a></li>
                 </ul>
             </div>
         </nav>
@@ -574,7 +647,7 @@
             </div>
 
             <div class="projectos-card">
-                <a href="./Projecto2.html">
+                <a href="./projecto2.html">
                     <img src="./assets/imagens/projecto2.2.jpg" alt="Project 2" class="projectos-imagem" />
                     <div class="caixa-textos-projectos">
                         <h3 class="info-projectos">Projecto 2</h3>
@@ -586,7 +659,7 @@
             </div>
 
             <div class="projectos-card">
-                <a href="./projecto3.html">
+                <a href="./Projecto3.html">
                     <img src="./assets/imagens/thumb.png" alt="Project 3" class="projectos-imagem" />
                     <div class="caixa-textos-projectos">
                         <h3 class="info-projectos">Projecto 3</h3>
@@ -634,30 +707,43 @@
         </div>
     </section>
 
-    <footer id="icon-menu" class="icon-menu">
-            <ul class="icon-menu">
+    <section id="contactos" class="contactos">
+        <div class="interface">
+            <h3 class="contactos-titulo"><strong>Entre em contacto</strong></h3>
+            <p class="slogan"><em>"Criatividade que se vê, inovação que se sente"</em></p>
+            <form action="mailto:allenuilessene1612@gmail.com" method="post" enctype="text/plain">
+                <input type="text" placeholder="Digite seu nome" required>
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <textarea name="" id="" placeholder="Digite a sua mensagem"></textarea>
+                <div class="enviar"><input type="submit" value="Enviar"></div>
+            </form>
+        </div>
+    </section>
 
-                <a href="https://github.com/Allen-codermz">
-                    <li style="--i: #313130; --j: #0a0a0a" class="icon-link">
-                        <span class="icon"><i class="fa fa-github"></i></span>
-                        <span class="titulo">GitHub</span>
-                    </li>
-                </a>
-                <a
-                    href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BxQ9YaYjQTemK9RSzGep5CQ%3D%3D">
-                    <li style="--i: #0077b5; --j: #004182" class="icon-link">
-                        <span class="icon"><i class="fa fa-linkedin"></i></span>
-                        <span class="titulo">LinkedIn</span>
-                    </li>
-                </a>
-                <a
-                    href="mailto:allenuilissene1612@gmail.com?subject=Contato%20do%20Portfólio&body=Ol%C3%A1%20Allen,%20encontrei-te%20atrav%C3%A9s%20do%20teu%20portf%C3%B3lio!">
-                    <li style="--i: #6b77eb; --j: #e5e7eb" class="icon-link">
-                        <span class="icon"><i class="fa fa-envelope"></i></span>
-                        <span class="titulo">Email</span>
-                    </li>
-                </a>
-            </ul>
+    <footer id="icon-menu" class="icon-menu">
+        <ul class="icon-menu">
+
+            <a href="https://github.com/Allen-codermz">
+                <li style="--i: #313130; --j: #0a0a0a" class="icon-link">
+                    <span class="icon"><i class="fa fa-github"></i></span>
+                    <span class="titulo">GitHub</span>
+                </li>
+            </a>
+            <a
+                href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BxQ9YaYjQTemK9RSzGep5CQ%3D%3D">
+                <li style="--i: #0077b5; --j: #004182" class="icon-link">
+                    <span class="icon"><i class="fa fa-linkedin"></i></span>
+                    <span class="titulo">LinkedIn</span>
+                </li>
+            </a>
+            <a
+                href="mailto:allenuilissene1612@gmail.com?subject=Contato%20do%20Portfólio&body=Ol%C3%A1%20Allen,%20encontrei-te%20atrav%C3%A9s%20do%20teu%20portf%C3%B3lio!">
+                <li style="--i: #6b77eb; --j: #e5e7eb" class="icon-link">
+                    <span class="icon"><i class="fa fa-envelope"></i></span>
+                    <span class="titulo">Email</span>
+                </li>
+            </a>
+        </ul>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
